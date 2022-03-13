@@ -5,6 +5,27 @@ from datetime import datetime
 
 DT_FORMAT = '%Y-%m-%d'
 
+class Employee:
+    def __init__(self, employee_name, employee_id):
+        self.employeeName = employee_name
+        self.employeeID = employee_id
+        self.equityAwards = set()  # list of award Ids ISO-001, IS0-002
+
+    def add_equity_award(self, award_id):
+        self.equityAwards.add(award_id)
+        return
+
+    def get_equity_awards(self):
+        return self.equityAwards
+
+
+class EquityEvent:
+
+    def __init__(self, award_id, award_date, award_qty, event_type):
+        self.awardId = award_id
+        self.awardDate = award_date
+        self.awardQty = award_qty
+        self.eventType = event_type
 
 class CapitalizationTable:
 
@@ -54,29 +75,6 @@ class CapitalizationTable:
                 vesting_schedule.append([employeeId, employee.employeeName, equityAward, total_qty])
 
         return vesting_schedule
-
-
-class Employee:
-    def __init__(self, employee_name, employee_id):
-        self.employeeName = employee_name
-        self.employeeID = employee_id
-        self.equityAwards = set()  # list of award Ids ISO-001, IS0-002
-
-    def add_equity_award(self, award_id):
-        self.equityAwards.add(award_id)
-        return
-
-    def get_equity_awards(self):
-        return self.equityAwards
-
-
-class EquityEvent:
-
-    def __init__(self, award_id, award_date, award_qty, event_type):
-        self.awardId = award_id
-        self.awardDate = award_date
-        self.awardQty = award_qty
-        self.eventType = event_type
 
 
 if __name__ == '__main__':
