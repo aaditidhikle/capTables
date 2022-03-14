@@ -8,6 +8,8 @@ In this exercise, you will generate a cumulative vesting schedule from a series 
 
 Design:
 
+1) Have tried to make the system READ efficient. This was a conscious decision which makes the write process longer.
+2) For future improvements, this system can be set up as CQRS where writes happen through a pub sub mechanism.
 csv --------> Employee Map
       |
       ------> Equity Event Map
@@ -15,3 +17,21 @@ csv --------> Employee Map
 Employee Map: is a dictionary collection of Employee objects. These objects hold employ name, id information. As well as a set of Equity awards awarded to the employee.
 
 Equity Event Map: contains all events of type EquityEvent mapped to a unique AwardID. 
+
+Object oriented feautures:
+1) Seperation of concerns
+2) Single resposibility
+3) Encapsulation : by using getters and setters for private variables
+4) Information hiding
+5) Inheritance: extensibility, code reuseability, data hiding
+
+Future improvements:
+1) CQRS
+2) Store data in a DB.
+3) Stronger data validation through pandas library.
+4) Polymorphism can be implemented to differentiate implementation of methods for different types of shareholders.
+
+
+Code Styling guidelines: PEP8 and Google Python Style Guide
+
+
