@@ -35,4 +35,7 @@ Future improvements:
 
 Code Styling guidelines followed: PEP8 and Google Python Style Guide
 
+To run the code:
+> python3 main.py example1.csv 1
+
 
