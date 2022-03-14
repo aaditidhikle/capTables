@@ -10,9 +10,7 @@ Design:
 
 1) Have tried to make the system READ efficient. This was a conscious decision which makes the write process longer.
 2) For future improvements, this system can be set up as CQRS where writes happen through a pub sub mechanism.
-csv --------> Employee Map
-      |
-      ------> Equity Event Map
+
 
 Employee Map: is a dictionary collection of Employee objects. These objects hold employ name, id information. As well as a set of Equity awards awarded to the employee.
 
